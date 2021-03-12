@@ -40,7 +40,7 @@ interface Props {
 }
 ```
 
-#### 2) UserContextProvider : useState 사용
+#### 2) UserContextProvider : useState, useEffect 사용
 ```typescript
 const UserCOntextProvider = ({children} : Props) => {
     const [userInfo, setUserInfo] = useState<IUserInfo | undefined>(undefined);
@@ -79,11 +79,27 @@ const UserCOntextProvider = ({children} : Props) => {
         AyncStorage.removeItem('token');
         setUserInfo(undefined);
     };
-}
 
+    useEffect(() => {
+        getUserInfo();
+    }, []);
 
+    return (
+        <UserContext.Provider
+            value={{
+                isLoading,
+                userInfo,
+                login,
+                getUserInfo,
+                logout,
+            }}
+        >
+            {children}
+        </UserContext.Provider>
+    );
+};
 
-
+export {UserContextProvide, UserContext};
 ```
 
 
