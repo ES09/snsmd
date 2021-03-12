@@ -4,7 +4,7 @@ Stack, Drawer, BottomTab 내비게이션
 ------------------------------------------
 
 ### 내비게이션 함수 호출
-```
+```typescript
 const Stack = ceateStackNavigator();
 const BottomTab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -12,7 +12,7 @@ const Drawer = createDrawerNavigator();
 
 * 화면에 내비게이션 헤더가 필요한 경우, 스택 내비게이션을 추가
 ### 1. Loginnavigator
-```
+```typescript
 const LoginNavigator = () => {
     return (
         <Stack.Navigator screenOptions-{{headerShown : false}}>
@@ -25,7 +25,7 @@ const LoginNavigator = () => {
 ```
 
 ### 2. MyFeedTab
-```
+```typescript
 const MyFeedTab = () => {
     return (
         <Stack.Navigator>
@@ -39,7 +39,7 @@ const MyFeedTab = () => {
 };
 ```
 ### 3. FeedTabs
-```
+```typescript
 const FeedsTab = () => {
     return (
         <Stack.Navigator>
@@ -66,7 +66,7 @@ const FeedsTab = () => {
 ```
 
 ### 4. UploadTab
-```
+```typescript
 const UploadTab = () => {
     return (
         <Stack.Navigator>
@@ -83,7 +83,7 @@ const UploadTab = () => {
 ```
 
 ### 5. ProfileTab
-```
+```typescript
 const ProfileTab = () => {
     return (
         <Stack.Navigator>
@@ -98,7 +98,7 @@ const ProfileTab = () => {
 ```
 
 ### 6. MainTab : 각각의 컴포넌트에 명시 된 것들이 위의 코드들에 해당
-```
+```typescript
 const MainTabs = () => {
     return (
         <BottomTab.Navigator tabBarOptions={{showLabel : false}}>
@@ -188,11 +188,11 @@ const MainTabs = () => {
 ```
 
 ### 7.  MainNavigator : Drawer 내비게이터 사용
-```
+```typescript
 const MainNavigator = () => {
     return (
         <Drawer.Navigator
-            drawerPosition="right" {/* 내비게이션 위치/}
+            drawerPosition="right" /* 내비게이션 위치 */
             drawerType="slide"
             drawerContent={(props) => <CustomDrawer props={props} />}>
                 <Drawoer.Screen name="MainTabs" component={MainTabs} />
@@ -219,7 +219,7 @@ export deafalut () => {
 ## 내비게이션 적용
   * App.tsx 수정
   * 타입스크립트 사용 시
-  ```
+  ```typescript
   import React form 'react';
   import { StatusBar } from 'react-native';
 
